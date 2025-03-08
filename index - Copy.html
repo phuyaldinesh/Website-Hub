@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinesh Phuyal - Website Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+    <!-- Background Video -->
+    <video id="background-video" autoplay loop muted playsinline>
+        <source src="videos/Background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Main Content -->
+    <main class="content-wrapper">
+        <header class="hub-header">
+            <h1 class="animated-title">Welcome to My Website Hub</h1>
+        </header>
+
+        <!-- Video Grid -->
+        <div class="video-grid">
+            <!-- Website 1 -->
+            <a href="#web1" class="video-card">
+                <video class="link-preview" muted loop playsinline>
+                    <source src="videos/Web1.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Website 1</div>
+            </a>
+
+            <!-- Website 2 -->
+            <a href="#web2" class="video-card">
+                <video class="link-preview" muted loop playsinline>
+                    <source src="videos/Web2.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Website 2</div>
+            </a>
+
+            <!-- Website 3 -->
+            <a href="#web3" class="video-card">
+                <video class="link-preview" muted loop playsinline>
+                    <source src="videos/Web3.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Website 3</div>
+            </a>
+
+            <!-- Website 4 -->
+            <a href="#web4" class="video-card">
+                <video class="link-preview" muted loop playsinline>
+                    <source src="videos/Web4.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Website 4</div>
+            </a>
+
+            <!-- Website 5 -->
+            <a href="#web5" class="video-card">
+                <video class="link-preview" muted loop playsinline>
+                    <source src="videos/Web5.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Website 5</div>
+            </a>
+        </div>
+    </main>
+
+    <!-- Video Control Script -->
+    <script>
+        // Simple video controls
+        document.querySelectorAll('.video-card').forEach(card => {
+            const video = card.querySelector('video');
+            
+            // Desktop hover
+            card.addEventListener('mouseenter', () => {
+                video.play();
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+
+            // Mobile touch
+            card.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

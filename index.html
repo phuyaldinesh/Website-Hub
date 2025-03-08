@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinesh Phuyal - Website Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme.css">
+    <style>
+        /* Import Google Fonts for consistency with news.html */
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap');
+
+        /* Root variables for consistency */
+        :root {
+            --primary-color: #2c3e50; /* Dark Blue */
+            --accent-color: #3498db; /* Bright Blue */
+            --text-color: #333; /* Dark Gray Text */
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Video background styling */
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        /* Content wrapper */
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh; /* Ensure it takes full height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header styling */
+        .hub-header {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .animated-title {
+            font-family: 'Merriweather', serif;
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .animated-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Video grid enhancements */
+        .video-grid {
+            display: grid;
+            gap: 30px;
+            padding: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            width: 100%;
+        }
+
+        .video-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-preview {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .video-label {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            transition: var(--transition);
+        }
+
+        .video-card:hover .video-label {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Footer styling */
+        .site-footer {
+            width: 100%;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            position: relative;
+            z-index: 1;
+            margin-top: auto; /* Pushes footer to bottom */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                padding: 1.5rem;
+            }
+
+            .animated-title {
+                font-size: 2rem;
+                padding-bottom: 0.5rem;
+            }
+
+            .video-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .link-preview {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video id="background-video" autoplay loop muted playsinline>
+        <source src="" type="video/mp4"> <!-- Src set by videos.js -->
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Main Content -->
+    <main class="content-wrapper">
+        <header class="hub-header">
+            <h1 class="animated-title">Welcome to My Website Hub</h1>
+        </header>
+
+        <!-- Video Grid -->
+        <div class="video-grid">
+            <!-- Website 1 -->
+            <a href="#web1" class="video-card">
+                <video class="link-preview" muted loop playsinline>
+                    <source src="videos/Web1.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Website 1</div>
+            </a>
+
+            <!-- Website 2 -->
+            <a href="#web2" class="video-card">
+                <video class="link-preview" muted loop playsinline>
+                    <source src="videos/Web2.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Website 2</div>
+            </a>
+
+            <!-- Website 3 -->
+            <a href="#web3" class="video-card">
+                <video class="link-preview" muted loop playsinline>
+                    <source src="videos/Web3.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Website 3</div>
+            </a>
+
+            <!-- Website 4 -->
+            <a href="#web4" class="video-card">
+                <video class="link-preview" muted loop playsinline>
+                    <source src="videos/Web4.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Website 4</div>
+            </a>
+
+            <!-- Website 5 -->
+            <a href="#web5" class="video-card">
+                <video class="link-preview" muted loop playsinline>
+                    <source src="videos/Web5.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Website 5</div>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="content-wrapper">
+                <p>Updated 2024 © Dinesh Phuyal</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Video Control Script -->
+    <script>
+        // Simple video controls for the grid
+        document.querySelectorAll('.video-card').forEach(card => {
+            const video = card.querySelector('video');
+            
+            // Desktop hover
+            card.addEventListener('mouseenter', () => {
+                video.play();
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+
+            // Mobile touch
+            card.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+        });
+    </script>
+
+    <!-- Link to centralized videos.js for background video -->
+    <script src="videos.js"></script>
+</body>
+</html>
